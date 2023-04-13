@@ -75,21 +75,50 @@
       </nav>
     </header>
     <main>
-      <h1 class="text-center">Check / Uncheck All</h1>
+      <h1 class="text-center">3. Disable Link</h1>
       <div class="container">
-        <button type="button" class="btn btn-primary" onclick="check(true)">
-          Check all
-        </button>
-        <button type="button" class="btn btn-primary" onclick="check(false)">
-          Uncheck all
-        </button>
-        <ul>
-          <li><input type="checkbox" name="checkbox1" id="1" /></li>
-          <label for="checkbox1">Checkbox 1</label>
-          <li><input type="checkbox" name="checkbox2" id="2" /></li>
-          <label for="checkbox2">Checkbox 2</label>
-          <li><input type="checkbox" name="checkbox3" id="3" /></li>
-          <label for="checkbox3">Checkbox 3</label>
+        <div class="mb-3">
+          <label for="" class="form-label">Keyword</label>
+          <input
+            class="form-control"
+            type="text"
+            placeholder=""
+            name="keyword"
+            id="keyword"
+            aria-describedby="helpId"
+            required
+            onkeyup="filter(this.value)"
+          />
+        </div>
+
+        <ul class="list-group">
+          <li
+            class="list-group-item list-group-item-action list-group-item-primary"
+          >
+            A
+          </li>
+          <li class="list-group-item">Aa</li>
+          <li class="list-group-item">Ab</li>
+          <li class="list-group-item">Ac</li>
+          <li class="list-group-item">Ad</li>
+          <li class="list-group-item">Ae</li>
+          <li class="list-group-item">Aabc</li>
+          <li class="list-group-item">Aa</li>
+        </ul>
+
+        <ul class="list-group">
+          <li
+            class="list-group-item list-group-item-action list-group-item-primary"
+          >
+            B
+          </li>
+          <li class="list-group-item">Bwe</li>
+          <li class="list-group-item">Basd</li>
+          <li class="list-group-item">Bse</li>
+          <li class="list-group-item">Bksd</li>
+          <li class="list-group-item">Boewe</li>
+          <li class="list-group-item">Bei</li>
+          <li class="list-group-item">Bns</li>
         </ul>
       </div>
     </main>
@@ -110,10 +139,20 @@
     ></script>
 
     <script>
-      function check(checked) {
+      function print(e) {
+        console.log(e.target.value);
+      }
+
+      function filter(keyword) {
         document
-          .querySelectorAll("input[type=checkbox]")
-          .forEach((item) => (item.checked = checked));
+          .querySelectorAll("li.list-group-item:not(.list-group-item-primary)")
+          .forEach((item) => {
+            if (item.innerText.indexOf(keyword) >= 0) {
+              item.style.display = "block";
+            } else {
+              item.style.display = "none";
+            }
+          });
       }
     </script>
   </body>
