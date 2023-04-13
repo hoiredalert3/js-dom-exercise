@@ -54,22 +54,46 @@
       </nav>
     </header>
     <main>
-      <h1 class="text-center">Check / Uncheck All</h1>
+      <h1 class="text-center">Active Icon</h1>
       <div class="container">
-        <button type="button" class="btn btn-primary" onclick="check(true)">
-          Check all
-        </button>
-        <button type="button" class="btn btn-primary" onclick="check(false)">
-          Uncheck all
-        </button>
-        <ul>
-          <li><input type="checkbox" name="checkbox1" id="1" /></li>
-          <label for="checkbox1">Checkbox 1</label>
-          <li><input type="checkbox" name="checkbox2" id="2" /></li>
-          <label for="checkbox2">Checkbox 2</label>
-          <li><input type="checkbox" name="checkbox3" id="3" /></li>
-          <label for="checkbox3">Checkbox 3</label>
-        </ul>
+        <div class="row text-center">
+          <div class="col">
+            <img src="DOM-images/icon-1.png" alt="" />
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
+              iste fugit similique! Ipsa dolorum aliquid labore reiciendis
+              praesentium! Sed recusandae officiis illum cumque impedit quis
+              incidunt, tempora fugiat voluptatibus quae!
+            </p>
+          </div>
+          <div class="col">
+            <img src="DOM-images/icon-2.png" alt="" />
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
+              iste fugit similique! Ipsa dolorum aliquid labore reiciendis
+              praesentium! Sed recusandae officiis illum cumque impedit quis
+              incidunt, tempora fugiat voluptatibus quae!
+            </p>
+          </div>
+          <div class="col">
+            <img src="DOM-images/icon-3.png" alt="" />
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
+              iste fugit similique! Ipsa dolorum aliquid labore reiciendis
+              praesentium! Sed recusandae officiis illum cumque impedit quis
+              incidunt, tempora fugiat voluptatibus quae!
+            </p>
+          </div>
+          <div class="col">
+            <img src="DOM-images/icon-4.png" alt="" />
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
+              iste fugit similique! Ipsa dolorum aliquid labore reiciendis
+              praesentium! Sed recusandae officiis illum cumque impedit quis
+              incidunt, tempora fugiat voluptatibus quae!
+            </p>
+          </div>
+        </div>
       </div>
     </main>
     <footer>
@@ -89,11 +113,16 @@
     ></script>
 
     <script>
-      function check(checked) {
-        document
-          .querySelectorAll("input[type=checkbox]")
-          .forEach((item) => (item.checked = checked));
-      }
+      document.querySelectorAll("img").forEach((item) => {
+        let imagePath = item.src;
+        let activeImagePath = imagePath.replace(".png", "-active.png");
+        item.addEventListener("mouseover", () => {
+          item.src = activeImagePath;
+        });
+        item.onmouseout = () => {
+          item.src = imagePath;
+        };
+      });
     </script>
   </body>
 </html>
