@@ -12,28 +12,75 @@
     integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 </head>
 
-<body class="bg-danger">
+<body>
   <header>
     <!-- place navbar here -->
+    <nav class="navbar navbar-expand-sm navbar-light bg-light">
+      <div class="container">
+        <a class="navbar-brand" href="./index.html">Navbar</a>
+        <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse"
+          data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+          <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="./ex01.html">Check / Uncheck all</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./ex02.html">Active Icon Image</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./ex03.html">Disable Link</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./ex04.html">Password Confirm & Show/Hide Passwords</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./ex05.html">Filter List</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./ex06.html">Add Item</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./ex07.html">Remove Item</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./ex08.html">Edit Item</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./ex09.html">Fetch Data</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./ex010.html">Pagination</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
   </header>
-  <main
-    class="text-bg-success position-absolute top-0 bottom-0 container-fluid d-flex flex-column justify-content-center align-items-center">
-    <h1>Sign In</h1>
-    <div class="mb-3 fs-4">
-      <label for="email" class="form-label">Email</label>
-      <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelpId"
+  <main class="bg-success bg-opacity-50 w-50 mt-auto me-auto ms-auto me-auto p-5">
+    <h1 class="d-block text-center mb-2">Sign In</h1>
+    <div class="fs-4">
+      <label for="email" class="form-label mt-2">Email</label>
+      <input type="email" class="form-control fs-5" name="email" id="email" aria-describedby="emailHelpId"
         placeholder="abc@mail.com" required>
-      <label for="password" class="form-label">Password</label>
-      <input type="password" class="form-control" name="password" id="password" placeholder="Your password" required>
-      <label for="repw" class="'form-label">Retype Password</label>
-      <input type="password" class="form-control" name="repw" id="repw" , placeholder="Retype your password" required>
-      <div class="form-check fs-5">
+      <label for="password" class="form-label mt-2">Password</label>
+      <input type="password" class="form-control fs-5" name="password" id="password" placeholder="Your password"
+        required>
+      <label for="repw" class="'form-label mt-2">Retype Password</label>
+      <input type="password" class="form-control fs-5" name="repw" id="repw" , placeholder="Retype your password"
+        required>
+      <div class="form-check fs-5 mt-2">
         <input class="form-check-input" type="checkbox" name="showpw" id="showpw-checkbox">
         <label class="form-check-label" for="showpw-checkbox">
           Show password
         </label>
       </div>
-      <button type="submit" class="btn btn-primary container">Sign In</button>
+      <div class="container text-center">
+        <button type="submit" class="btn btn-primary fs-4 fw-bold mt-3">Sign In</button>
+      </div>
     </div>
   </main>
   <!-- Bootstrap JavaScript Libraries -->
