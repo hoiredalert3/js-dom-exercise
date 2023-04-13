@@ -1,16 +1,22 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+  <head>
+    <title>20120463</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
 
-<head>
-  <title>20120463</title>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  <!-- Bootstrap CSS v5.2.1 -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-</head>
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+  </head>
 
 <body>
   <header>
@@ -88,60 +94,59 @@
     integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
     </script>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
-    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+      integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      function showpw() {
+        document.getElementsByName("password").forEach((item) => {
+          item.type = "text";
+        });
+        document.getElementsByName("repw").forEach((item) => {
+          item.type = "text";
+        });
+      }
+
+      function unshowpw() {
+        document.getElementsByName("password").forEach((item) => {
+          item.type = "password";
+        });
+        document.getElementsByName("repw").forEach((item) => {
+          item.type = "password";
+        });
+      }
+      let showpw_checkbox = document.getElementById("showpw-checkbox");
+      showpw_checkbox.addEventListener("change", function () {
+        if (this.checked) showpw();
+        else unshowpw();
+      });
+
+      // sign in btn
+      btn = document.querySelector("button[type='submit']");
+      btn.onclick = function () {
+        let email = document.querySelector('input[name="email"]').value;
+        let pw = document.querySelector('input[name="password"]').value;
+        let repw = document.querySelector('input[name="repw"]').value;
+
+        console.log(email, pw, repw);
+
+        if (email.length == 0 || pw.length == 0 || repw.length == 0) {
+          window.alert("Please fill out all the fields");
+          return;
+        }
+
+        if (pw == repw) {
+          window.alert("Succesfully signed in");
+          document
+            .querySelectorAll("#password, #repw, #email")
+            .forEach((item) => {
+              item.value = "";
+            });
+        } else window.alert("Password and re-password doesnt match");
+      };
     </script>
-
-  <script>
-    function showpw() {
-      document.getElementsByName("password").forEach((item) => {
-        item.type = "text";
-      });
-      document.getElementsByName("repw").forEach((item) => {
-        item.type = "text";
-      });
-    }
-
-    function unshowpw() {
-      document.getElementsByName("password").forEach((item) => {
-        item.type = "password";
-      });
-      document.getElementsByName("repw").forEach((item) => {
-        item.type = "password";
-      });
-    }
-    let showpw_checkbox = document.getElementById('showpw-checkbox');
-    showpw_checkbox.addEventListener('change', function () {
-      if (this.checked)
-        showpw();
-      else
-        unshowpw();
-    })
-
-    // sign in btn
-    btn = document.querySelector("button[type='submit']");
-    btn.onclick = function () {
-      let email = document.querySelector('input[name="email"]').value;
-      let pw = document.querySelector('input[name="password"]').value;
-      let repw = document.querySelector('input[name="repw"]').value;
-
-      console.log(email, pw, repw);
-
-      if (email.length == 0 || pw.length == 0 || repw.length == 0) {
-        window.alert("Please fill out all the fields");
-        return;
-      }
-
-      if (pw == repw) {
-        window.alert("Succesfully signed in");
-        document.querySelectorAll("#password, #repw, #email").forEach((item) => {
-          item.value = "";
-        })
-      }
-      else
-        window.alert("Password and re-password doesnt match");
-    }
-  </script>
-</body>
-
+  </body>
 </html>
